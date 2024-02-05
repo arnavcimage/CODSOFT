@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>Calculator</title>
+</head>
+<body>
+<form>
+Enter first number:<input type="text" name="num1" ><br><br>
+Enter second number:<input type="text" name="num2" ><br><br>
+
+<input type="submit" name="operation" value="Add" id="opearand">
+<input type="submit" name="operation" value="Subtract" id="operand">
+<input type="submit" name="operation" value="Multiply" id="operand">
+<input type="submit" name="operation" value="Divide" id="operand">
+</form>
+<%@ page import="java.util.Objects" %>
+<%
+String n1 = request.getParameter("num1");
+
+String n2 = request.getParameter("num2");
+
+String operation=request.getParameter("operation");
+
+if("Add".equals(operation)){
+	out.println("Result :: "+(Integer.parseInt(n1)+Integer.parseInt(n2)));
+}
+else if("Subtract".equals(operation)){
+	out.println("Result :: "+(Integer.parseInt(n1)-Integer.parseInt(n2)));
+}
+else if("Multiply".equals(operation)){
+	out.println("Result :: "+(Integer.parseInt(n1)*Integer.parseInt(n2)));
+}
+else if("Divide".equals(operation)){
+	out.println("Result :: "+(Integer.parseInt(n1)/Integer.parseInt(n2)));
+}
+%>
+</body>
+</html>
